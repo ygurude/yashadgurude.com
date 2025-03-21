@@ -4,6 +4,8 @@
 // import { baseURL } from "@/app/resources";
 // import { blog, person, newsletter } from "@/app/resources/content";
 
+
+
 // export async function generateMetadata() {
 //   const title = blog.title;
 //   const description = blog.description;
