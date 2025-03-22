@@ -1,11 +1,11 @@
-// import { notFound } from "next/navigation";
-// import { CustomMDX } from "@/components/mdx";
-// import { getPosts } from "@/app/utils/utils";
-// import { AvatarGroup, Button, Column, Heading, Row, Text } from "@/once-ui/components";
-// import { baseURL } from "@/app/resources";
-// import { person } from "@/app/resources/content";
-// import { formatDate } from "@/app/utils/formatDate";
-// import ScrollToHash from "@/components/ScrollToHash";
+import { notFound } from "next/navigation";
+import { CustomMDX } from "@/components/mdx";
+import { getPosts } from "@/app/utils/utils";
+import { AvatarGroup, Button, Column, Heading, Row, Text } from "@/once-ui/components";
+import { baseURL } from "@/app/resources";
+import { person } from "@/app/resources/content";
+import { formatDate } from "@/app/utils/formatDate";
+import ScrollToHash from "@/components/ScrollToHash";
 
 // interface BlogParams {
 //   params: {
@@ -13,12 +13,12 @@
 //   };
 // }
 
-// export async function generateStaticParams(): Promise<{ slug: string }[]> {
-//   const posts = getPosts(["src", "app", "blog", "posts"]);
-//   return posts.map((post) => ({
-//     slug: post.slug,
-//   }));
-// }
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
+  const posts = getPosts(["src", "app", "blog", "posts"]);
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
 
 // export function generateMetadata({ params: { slug } }: BlogParams) {
 //   let post = getPosts(["src", "app", "blog", "posts"]).find((post) => post.slug === slug);
