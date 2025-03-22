@@ -1,9 +1,12 @@
-// import { Column, Flex, Heading } from "@/once-ui/components";
-// import { Mailchimp } from "@/components";
-// import { Posts } from "@/components/blog/Posts";
-// import { baseURL } from "@/app/resources";
-// import { blog, person, newsletter } from "@/app/resources/content";
+import { Column, Flex, Heading } from "@/once-ui/components";
+import { Mailchimp } from "@/components";
+import { Posts } from "@/components/blog/Posts";
+import { baseURL } from "@/app/resources";
+import { person } from "@/app/resources/content";
 
+export default function BlogPage() {
+  return <div>Blog Page</div>;
+}
 
 
 // export async function generateMetadata() {
