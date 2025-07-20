@@ -11,6 +11,7 @@ import { Source_Code_Pro } from "next/font/google";
 
 import { person, home } from "@/app/resources/content";
 import { Background, Column, Flex, ToastProvider } from "@/once-ui/components";
+import { Analytics } from "@vercel/analytics/next"
 
 export async function generateMetadata() {
   return {
@@ -91,6 +92,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       )}
     >
       <ToastProvider>
+        <Analytics />
         <Column style={{ minHeight: "100vh" }} as="body" fillWidth margin="0" padding="0">
           <Background
             mask={{
