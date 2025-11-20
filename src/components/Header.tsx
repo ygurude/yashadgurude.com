@@ -45,6 +45,16 @@ export default TimeDisplay;
 export const Header = () => {
   const pathname = usePathname() ?? "";
 
+  // If we're on the home page, link to hash anchors so the header becomes a single-page nav.
+  const makeHref = (route: string) => {
+    if (pathname === "/") {
+      // convert "/about" -> "#about", "/work" -> "#work"
+      const name = route.replace("/", "");
+      return name ? `#${name}` : "/";
+    }
+    return route;
+  };
+
   return (
     <>
       <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} />
@@ -80,14 +90,14 @@ export const Header = () => {
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="person"
-                    href="/about"
+                    href={makeHref("/about")}
                     label={about.label}
                     selected={pathname === "/about"}
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="person"
-                    href="/about"
+                    href={makeHref("/about")}
                     selected={pathname === "/about"}
                   />
                 </>
@@ -97,14 +107,14 @@ export const Header = () => {
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="grid"
-                    href="/work"
+                    href={makeHref("/work")}
                     label={projects.label}
                     selected={pathname.startsWith("/work")}
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="grid"
-                    href="/work"
+                    href={makeHref("/work")}
                     selected={pathname.startsWith("/work")}
                   />
                 </>

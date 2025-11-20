@@ -7,7 +7,7 @@ const person = {
     return `${this.firstName} ${this.lastName}`;
   },
   role: "Software & Hardware Engineer",
-  avatar: "/images/avatar.png",
+  avatar: "/images/headshot.jpeg",
   //location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna' EST
   languages: ["English", "Marathi"], // optional: Leave the array empty if you don't want to display languages
 };
@@ -101,6 +101,8 @@ const about = {
         company: "SIP Neuroengineering Lab",
         timeframe: "May 2024 - Present",
         role: "Undergraduate Research Assistant",
+          logo: "/images/logos/sip.png",
+          link: "#",
         achievements: [
           <>
             Developed a real-time multi-stream data acquisition system using MATLAB and Lab Streaming Layer , synchronizing
@@ -133,6 +135,8 @@ const about = {
         company: "Keller Williams",
         timeframe: "June 2024 - August 2024",
         role: "Software Engineering Intern",
+        logo: "/images/logos/keller-williams.png",
+        link: "#",
         achievements: [
           <>
             Developed a secure web portal using Next.js, automating document management for 100+ real estate agents and
@@ -153,6 +157,8 @@ const about = {
         company: "EcoCAR EV Team",
         timeframe: "January 2024 - May 2024",
         role: "Propulsion Controls and Automation Engineer",
+        logo: "/images/logos/ecocar.png",
+        link: "#",
         achievements: [
           <>
             Developed electrical vehicle models with Software-in-Loop and Hardware -in-Loop simulations by developing in Simulink

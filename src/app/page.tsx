@@ -2,6 +2,7 @@ import React from "react";
 
 import { Heading, Flex, Text, Button, Avatar, RevealFx, Arrow, Column } from "@/once-ui/components";
 import { Projects } from "@/components/work/Projects";
+import Experiences from "@/components/about/Experiences";
 
 import { baseURL, routes } from "@/app/resources";
 import { home, about, person} from "@/app/resources/content";
@@ -39,7 +40,7 @@ export async function generateMetadata() {
 
 export default function Home() {
   return (
-    <Column maxWidth="m" gap="xl" horizontal="center">
+    <Column id="home" maxWidth="m" gap="xl" horizontal="center">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -76,9 +77,9 @@ export default function Home() {
           </RevealFx>
           <RevealFx translateY="12" delay={0.4} horizontal="start">
             <Button
-              id="about"
+              id="about-btn"
               data-border="rounded"
-              href="/about"
+              href="#about"
               variant="secondary"
               size="m"
               arrowIcon
@@ -97,9 +98,33 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
-      {/* <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
-      </RevealFx> */}
+      {/* About / Experiences section */}
+      <Column id="about" fillWidth paddingY="l" gap="m">
+        <Heading as="h2" variant="display-strong-xs">About</Heading>
+        {about.intro.display && (
+          <Text onBackground="neutral-weak">{about.intro.description}</Text>
+        )}
+
+        {about.work.display && (
+          <div style={{ marginTop: 24 }}>
+            <Heading as="h3" variant="display-strong-xs">{about.work.title}</Heading>
+            <div>
+              {/* new Experiences component */}
+              <div className="mt-6">
+                {/* render logo cards with dialog */}
+                <Experiences />
+              </div>
+            </div>
+          </div>
+        )}
+      </Column>
+
+      {/* Work / Projects section */}
+      <Column id="work" fillWidth paddingY="l" gap="m">
+        <RevealFx translateY="16" delay={0.6}>
+          <Projects range={[1, 6]} />
+        </RevealFx>
+      </Column>
       {/* {routes["/blog"] && (
         <Flex fillWidth gap="24" mobileDirection="column">
           <Flex flex={1} paddingLeft="l">
