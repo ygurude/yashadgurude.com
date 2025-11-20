@@ -19,22 +19,32 @@ export default function Experiences() {
 
   return (
     <div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      {/* Grid similar to arinkhanna.com: responsive 1/2/3 columns with roomy cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {experiences.map((exp, i) => (
-          <Card key={i} className="p-4 cursor-pointer" onClick={() => openExperience(i)}>
+          <Card
+            key={`${exp.company}-${i}`}
+            className="p-6 cursor-pointer hover:scale-[1.02] transition-transform duration-200"
+            onClick={() => openExperience(i)}
+          >
             <Flex direction="column" center>
-              <div className="w-20 h-20 relative mb-3">
+              <div className="w-28 h-28 relative mb-4 flex items-center justify-center">
                 {exp.logo ? (
-                  // Next/Image requires domains or local files under /public
-                  <Image src={exp.logo} alt={`${exp.company} logo`} fill className="object-contain" />
+                  <Image
+                    src={exp.logo}
+                    alt={`${exp.company} logo`}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 80px, 112px"
+                  />
                 ) : (
                   <div className="w-20 h-20 bg-gray-200 rounded-full" />
                 )}
               </div>
-              <Heading variant="heading-strong-s" className="text-sm text-center">
+              <Heading variant="heading-strong-s" className="text-base text-center">
                 {exp.company}
               </Heading>
-              <Text className="text-xs text-center mt-1">{exp.role}</Text>
+              <Text className="text-sm text-center mt-1">{exp.role}</Text>
             </Flex>
           </Card>
         ))}
