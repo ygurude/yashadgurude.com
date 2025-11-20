@@ -58,12 +58,9 @@ const home = {
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <>Hi! My name is Yashad</>,
-  subline: (
-    <>
-      I am a computer engineering student at <InlineCode>Georgia Tech</InlineCode> Professionally, I am interested in Software and Hardware Engineering, Embedded Software Engineering, ASIC Engineering, Tech Consulting, and Banking.
-      Outside of that, I love playing and watching basketball, playing pickleball, watching football, and enjoying a good movie.
-    </>
-  ),
+  subline: <>
+    Interested in software/hardware engineering
+  </>,
 };
 
 const about = {
