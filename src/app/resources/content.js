@@ -153,7 +153,7 @@ const about = {
         ],
         images: [],
       },
-      {
+      /* {
         company: "EcoCAR EV Team",
         timeframe: "January 2024 - May 2024",
         role: "Propulsion Controls and Automation Engineer",
@@ -171,7 +171,7 @@ const about = {
           </>,
         ],
         images: [],
-      },
+      }, */
     ],
   },
   studies: {

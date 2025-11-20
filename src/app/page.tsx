@@ -119,12 +119,13 @@ export default function Home() {
         )}
       </Column>
 
-      {/* Work / Projects section */}
+      {/* Work / Projects section (temporarily hidden)
       <Column id="work" fillWidth paddingY="l" gap="m">
         <RevealFx translateY="16" delay={0.6}>
           <Projects range={[1, 6]} />
         </RevealFx>
       </Column>
+      */}
       {/* {routes["/blog"] && (
         <Flex fillWidth gap="24" mobileDirection="column">
           <Flex flex={1} paddingLeft="l">
