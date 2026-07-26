@@ -1,59 +1,43 @@
-import { Flex, IconButton, SmartLink, Text } from "@/once-ui/components";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa6";
+import { HiEnvelope } from "react-icons/hi2";
 import { person, social } from "@/app/resources/content";
 import styles from "./Footer.module.scss";
 
+const socialIcons = {
+  GitHub: FaGithub,
+  LinkedIn: FaLinkedin,
+  Instagram: FaInstagram,
+  Email: HiEnvelope,
+} as const;
+
+const footerSocials = ["GitHub", "LinkedIn", "Instagram", "Email"] as const;
+
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const icons = social.filter(
+    (item) => item.link && footerSocials.includes(item.name as (typeof footerSocials)[number]),
+  );
 
   return (
-    <Flex
-      as="footer"
-      position="relative"
-      fillWidth
-      padding="8"
-      horizontal="center"
-      mobileDirection="column"
-    >
-      <Flex
-        className={styles.mobile}
-        maxWidth="m"
-        paddingY="8"
-        paddingX="16"
-        gap="16"
-        horizontal="space-between"
-        vertical="center"
-      >
-        <Text variant="body-default-s" onBackground="neutral-strong">
-          <Text onBackground="neutral-weak">© {currentYear} /</Text>
-          <Text paddingX="4">{person.name}</Text>
-          <Text onBackground="neutral-weak">
-            {/* Usage of this template requires attribution. Please don't remove the link to Once UI. */}
-            {/* / Build your portfolio with{" "}
-            <SmartLink
-              style={{ marginLeft: "-0.125rem" }}
-              href="https://once-ui.com/templates/magic-portfolio"
+    <footer className={styles.footer}>
+      <div className={styles.socials}>
+        {icons.map((item) => {
+          const Icon = socialIcons[item.name as keyof typeof socialIcons];
+          if (!Icon) return null;
+          return (
+            <a
+              key={item.name}
+              href={item.link}
+              aria-label={item.name}
+              target={item.link.startsWith("http") ? "_blank" : undefined}
+              rel="noreferrer"
             >
-              Once UI
-            </SmartLink> */}
-          </Text>
-        </Text>
-        <Flex gap="16">
-          {social.map(
-            (item) =>
-              item.link && (
-                <IconButton
-                  key={item.name}
-                  href={item.link}
-                  icon={item.icon}
-                  tooltip={item.name}
-                  size="s"
-                  variant="ghost"
-                />
-              ),
-          )}
-        </Flex>
-      </Flex>
-      <Flex height="80" show="s"></Flex>
-    </Flex>
+              <Icon />
+            </a>
+          );
+        })}
+      </div>
+      <p>© {currentYear} {person.name}</p>
+    </footer>
   );
 };

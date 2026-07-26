@@ -5,6 +5,7 @@ const baseURL = "demo.magic-portfolio.com";
 const routes = {
   "/": true,
   "/about": true,
+  "/experience": true,
   "/work": true,
   // "/blog": true,
   // "/gallery": true,
@@ -19,18 +20,18 @@ const protectedRoutes = {
 const style = {
   theme: "light", // dark | light
   neutral: "slate", // sand | gray | slate
-  brand: "violet", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
-  accent: "orange", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+  brand: "aqua", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+  accent: "aqua", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
   solid: "contrast", // color | contrast
   solidStyle: "flat", // flat | plastic
-  border: "playful", // rounded | playful | conservative
+  border: "conservative", // rounded | playful | conservative
   surface: "translucent", // filled | translucent
-  transition: "all", // all | micro | macro
+  transition: "macro", // all | micro | macro
 };
 
 const effects = {
   mask: {
-    cursor: true,
+    cursor: false,
     x: 0,
     y: 0,
     radius: 75,
@@ -65,8 +66,8 @@ const effects = {
 };
 
 const display = {
-  location: true,
-  time: true,
+  location: false,
+  time: false,
 };
 
 const mailchimp = {

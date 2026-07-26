@@ -6,9 +6,10 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Software & Hardware Engineer",
-  avatar: "/images/avatar.png",
-  //location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna' EST
+  role: "Software Engineer @ AT&T",
+  avatar: "/images/headshot.jpeg",
+  resume: "/Yashad_Gurude.pdf",
+  location: "America/New_York",
   languages: ["English", "Marathi"], // optional: Leave the array empty if you don't want to display languages
 };
 
@@ -57,16 +58,14 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Hi! My name is Yashad</>,
-  subline: <>
-    Interested in software/hardware engineering
-  </>,
+  headline: <>{person.name}</>,
+  subline: <>Software Engineer @ AT&T</>,
 };
 
 const about = {
   label: "About",
   title: "About Me",
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Meet ${person.name}, ${person.role}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -83,13 +82,10 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Passionate Computer Engineering major at Georgia Tech with a focus on Information 
-        Internetworks and Computing Hardware/Emerging Architecture. Experienced in a 
-        myriad of software languages and honed skills through involvement in multiple 
-        organizations. Well-versed in engineering programs such as Python, Java, C, 
-        System Verilog, MATLAB, and Assembly Language. Currently seeking Engineering 
-        Internships to apply my diverse skill set and contribute to innovative projects. 
-
+        Computer Engineering major at Georgia Tech focused on Information Internetworks
+        and Computing Hardware / Emerging Architecture. I work across Python, Java, C,
+        SystemVerilog, MATLAB, and assembly — and I&apos;m looking for engineering
+        internships where I can ship real systems.
       </>
     ),
   },
@@ -98,72 +94,53 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "SIP Neuroengineering Lab",
-        timeframe: "May 2024 - Present",
-        role: "Undergraduate Research Assistant",
-        achievements: [
-          <>
-            Developed a real-time multi-stream data acquisition system using MATLAB and Lab Streaming Layer , synchronizing
-            EEG, Pupil Labs eye-tracking, and other biosignal streams across 5+ devices with sub-millisecond precision
-          </>,
-          <>
-            Designed a GUI-based control interface in MATLAB with start, stop, pause, resume functions, and an event marker
-            system, improving data segmentation efficiency by 40%
-          </>,
-          <>
-            Processed and analyzed 70,000+ EEG data points using MATLAB, Python, applying signal processing techniques for
-            artifact reduction and feature extractions
-          </>,
-          <>
-            Implemented a Python-based LSL data stream via Conda and pylsl for synchronized stimulus presentation and
-            automated event tracking, enhancing cognitive response analysis
-          </>,
-        ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          // {
-          //   src: "/images/projects/project-01/cover-01.jpg",
-          //   alt: "Once UI Project",
-          //   width: 16,
-          //   height: 9,
-          // },
-        ],
-      },
-      {
-        company: "Keller Williams",
-        timeframe: "June 2024 - August 2024",
-        role: "Software Engineering Intern",
-        achievements: [
-          <>
-            Developed a secure web portal using Next.js, automating document management for 100+ real estate agents and
-            reducing paperwork processing time by 50%
-          </>,
-          <>
-            Implemented a RESTful API for seamless integration between the web platform and internal databases, enabling real-time
-            retrieval and storage of contracts, listings, and compliance documents
-          </>,
-          <>
-            Collaborated with the IT team to optimize backend infrastructure which improved query performance by 40% and
-            enhancing overall user experience
-          </>,
-        ],
+        slug: "att",
+        company: "AT&T",
+        timeframe: "",
+        role: "Software Engineer",
+        logo: "/images/logos/att.svg",
+        description: "",
+        achievements: [],
         images: [],
       },
       {
-        company: "EcoCAR EV Team",
-        timeframe: "January 2024 - May 2024",
-        role: "Propulsion Controls and Automation Engineer",
-        achievements: [
-          <>
-            Developed electrical vehicle models with Software-in-Loop and Hardware -in-Loop simulations by developing in Simulink
-          </>,
-          <>
-            Elevated Adaptive Cruise Control capabilities by conducting comprehensive testing and comparative simulations
-          </>,
-          <>
-            Executed the innovation of human-machine and driver monitoring interfaces for steady autonomous vehicle connectivity
-          </>,
-        ],
+        slug: "american-express",
+        company: "American Express",
+        timeframe: "",
+        role: "",
+        logo: "/images/logos/american-express.svg",
+        description: "",
+        achievements: [],
+        images: [],
+      },
+      {
+        slug: "ncr-voyix",
+        company: "NCR Voyix",
+        timeframe: "",
+        role: "",
+        logo: "/images/logos/ncr-voyix.svg",
+        description: "",
+        achievements: [],
+        images: [],
+      },
+      {
+        slug: "georgia-tech",
+        company: "Georgia Tech",
+        timeframe: "May 2024 - Present",
+        role: "Undergraduate Research Assistant",
+        logo: "/images/logos/sip.png",
+        description: "",
+        achievements: [],
+        images: [],
+      },
+      {
+        slug: "keller-williams",
+        company: "Keller Williams",
+        timeframe: "June 2024 - August 2024",
+        role: "Software Engineering Intern",
+        logo: "/images/logos/keller-williams.png",
+        description: "",
+        achievements: [],
         images: [],
       },
     ],
@@ -293,9 +270,9 @@ const about = {
 // };
 
 const projects = {
-  label: "Projects",
-  title: "My projects",
-  description: `Design and dev projects by ${person.name}`,
+  label: "Work",
+  title: "Work",
+  description: `Experience and work by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
