@@ -1,25 +1,112 @@
-.position {
-    position: sticky;
-    top: 0;
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  width: 100%;
+  background: #ffffff;
+  border-bottom-left-radius: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
+  box-shadow: 0 8px 24px rgba(30, 58, 95, 0.08);
 }
 
-.mask {
-    pointer-events: none;
-    backdrop-filter: blur(0.5rem);
-    background: linear-gradient(to bottom, var(--page-background), var(--static-transparent));
-    mask-image: linear-gradient(rgba(0,0,0) 25%, rgba(0, 0, 0, 0) 100%);
-    mask-size: 100% 100%;
+.inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.35rem 2rem;
 }
 
-@media (--s) {
-    .position {
-        top: auto;
-        position: fixed;
-        bottom: var(--static-space-24);
-    }
+.header a.brand {
+  color: #1e3a5f;
+  text-decoration: none;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
 
-    .mask {
-        transform: rotate(180deg);
-        bottom: 0;
-    }
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.header a.link {
+  position: relative;
+  color: #1e3a5f;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding-bottom: 0.2rem;
+}
+
+.header a.link:hover {
+  text-decoration: none;
+}
+
+.header a.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.15rem;
+  width: 100%;
+  height: 0.22rem;
+  background: #1e3a5f;
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.header a.link:hover::after,
+.header a.active::after {
+  transform: scaleX(1);
+}
+
+.header a.resume {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 1rem;
+  border-radius: 0.65rem;
+  background: #1e3a5f;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.header a.resume:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+@media (max-width: 768px) {
+  .header {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+
+  .inner {
+    padding: 1.1rem 1.25rem;
+  }
+
+  .header a.brand {
+    font-size: 1.2rem;
+  }
+
+  .nav {
+    gap: 1.1rem;
+  }
+
+  .header a.link {
+    font-size: 0.95rem;
+  }
+
+  .header a.resume {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.85rem;
+  }
 }
